@@ -14,7 +14,15 @@
     </style>
   </head>
   <body>
-    <ul id="messages"></ul>
+  <div id="text"></div>
+  <div class="wrapper">
+      <div class="popup">
+          <iframe src="" width="728" height="610">
+              <p>Your browser does not support iframes.</p>
+          </iframe>
+
+      </div>
+  </div>
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
@@ -32,11 +40,17 @@
 		      contentType: "application/json; charset=utf-8",
 		      success: function(response){
 				  url = response['data']['meetingURL'];
-				  var joinHTML = '<a href="'+url+'"><button>Join Meeting!</a></button>';
-				          $('#messages').append($(joinHTML))
+				  $("#text").append("<button id='click'>Join Meeting</button>");
+				  $('#text').on('click', function() {
+			          $("iframe").attr("src", url);
+			          $(".popup").fadeIn('slow');
+				  })
 		      }
 		  });
       });
+	  $(document).ready(function () {
+		  $(".popup").hide();
+	  })
     </script>
   </body>
 </html>
