@@ -10,7 +10,23 @@
     <script>
       var socket = io();
       $('button').click(function(){
-        socket.emit('chat message');
+		  $.ajax ({
+		      url: "https://sandbox.liveh2h.com/tutormeetweb/rest/v1/meetings/createInstantMeeting",
+		      type: "POST",
+		      data: JSON.stringify({
+  "applicationId": "F5A210AB-2923-4D6C-AE98-5D10E7DE551C",
+  "email": "lucasho2340@gmail.com",
+  "name": "Lucas Ho",
+  "templateId": "E2FE4B26-EAB0-4682-A65B-E756AD3A0C8D"
+}),
+		      dataType: "json",
+		      contentType: "application/json; charset=utf-8",
+		      success: function(response){
+				  url = response['data']['meetingURL'];
+		          window.open(url, '_self');
+				  socket.emit('chat message', url);
+		      }
+		  });
       });
     </script>
   </body>

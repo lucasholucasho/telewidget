@@ -20,9 +20,8 @@
     <script>
       var socket = io();
       socket.on('chat message', function(msg){
-        $('#messages').append($('<button>').text('Join'));
-		$('#messages').append($('<br>'));
-		$('#messages').append($('<br>'));
+		  var joinHTML = '<a href="'+msg+'"><button>Join Meeting!</a></button>';
+        $('#messages').append($(joinHTML));
       });
     </script>
   </body>
