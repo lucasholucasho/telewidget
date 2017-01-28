@@ -23,8 +23,9 @@
 		      contentType: "application/json; charset=utf-8",
 		      success: function(response){
 				  url = response['data']['meetingURL'];
+				  meeting_id = response['data']['meetingId'];
+				  socket.emit('meeting id', meeting_id);
 		          window.open(url, '_self');
-				  socket.emit('chat message', url);
 		      }
 		  });
       });

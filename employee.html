@@ -19,9 +19,23 @@
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
       var socket = io();
-      socket.on('chat message', function(msg){
-		  var joinHTML = '<a href="'+msg+'"><button>Join Meeting!</a></button>';
-        $('#messages').append($(joinHTML));
+      socket.on('meeting id', function(meeting_id){
+		  $.ajax ({
+		      url: "https://sandbox.liveh2h.com/tutormeetweb/rest/v1/meetings/join",
+		      type: "POST",
+		      data: JSON.stringify({
+  "email": "lucasho@sbcglobal.net",
+  "meetingId": meeting_id,
+  "name": "Blah Man"
+}),
+		      dataType: "json",
+		      contentType: "application/json; charset=utf-8",
+		      success: function(response){
+				  url = response['data']['meetingURL'];
+				  var joinHTML = '<a href="'+url+'"><button>Join Meeting!</a></button>';
+				          $('#messages').append($(joinHTML))
+		      }
+		  });
       });
     </script>
   </body>
