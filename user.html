@@ -1,20 +1,81 @@
 <!doctype html>
 <html>
   <head>
-    <title>User</title>
-  </head>
-  <body>
-	  <button>Start</button>
-	  <div class="wrapper">
-	      <div class="popup">
-	          <iframe src="" width="728" height="610">
-	              <p>Your browser does not support iframes.</p>
-	          </iframe>
+    <title>Thomas Elmerson</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
 
-	      </div>
-	  </div>
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  </head>
+  
+
+  <body class="blue">
+  	<div id="container">	
+
+	  	  <div id="widgetContainer" class="collapsed">
+	  	  		<div id="videoCall" class=""></div>
+
+	  	  		<div id="collapseButton" class="hidden"><p>X</p></div>
+
+	  	  		<div id="onboardingInfo" class="hidden"></div>
+
+	  	  		<div id="pricing" class="hidden"></div>
+
+	  	  		<div id="infoForm" class="hidden">
+
+	  	  			<form>
+	  	  			<div id="nameForm" class="form-group hidden">	
+	  	  				<label for="exampleInputEmail1">Name</label>
+    					<input type="name" class="form-control" id="InputName" placeholder="Name">
+	  	  			</div>
+	  	  			
+
+	  	  			<div id="questionForm" class="form-group hidden">
+	  	  				<label for="exampleInputEmail1">Name</label>
+    					<input type="name" class="form-control" id="InputName" placeholder="Name">	
+	  	  			</div>
+
+	  	  			<div id="paymentInfo" class="form-group hidden">
+	  	  				<label for="exampleInputEmail1">Name</label>
+    					<input type="name" class="form-control" id="InputName" placeholder="Name">
+	  	  			</div>
+
+	  	  			</form>
+
+	  	  		</div>		
+
+	  	  		<div id="onboardingControls" class="">
+
+	  	  			<button type="button" id="startButton" class="center-block startCall hidden text-center">Start Conversation</button>
+
+	  	  		</div>	
+
+	  	  		<div id="progressBar" class="hidden">
+	  	  		</div>
+	 	  	 
+
+		  	  	 <div class="wrapper">
+				      <div class="popup">
+				          <iframe src="" width="728" height="610">
+				              <p>Your browser does not support iframes.</p>
+				          </iframe>
+				      </div>
+			     </div>
+
+	  	  </div>
+	</div>
+
+
+
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/interactions.js"></script>
+
     <script>
       var socket = io();
       $('button').click(function(){
@@ -42,5 +103,9 @@
 		  $(".popup").hide();
 	  })
     </script>
+
+    <!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
   </body>
 </html>

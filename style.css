@@ -1,0 +1,126 @@
+.blue{background-color: #C0F0FF;}
+.background {background-color: #F2F2F2;}
+.hidden {display: none;}
+
+html { 
+  background: url("/lawyer-bg.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.collapsed {
+		height: 100px;
+		width: 100px;
+	}
+
+	.expanded {
+		transition-property: height, width;
+		transition-duration: 0.5s;
+	  height:605px;
+	  width: 645px;
+	}
+
+
+body {
+background-color: #C0F0FF;	
+font-family: 'Roboto', sans-serif;
+}
+
+#container {
+	background-color: #C0F0FF;
+}
+
+#videoCall {
+	background: url("/videocall.png");
+	height: 100px;
+	width: 100px;
+}
+
+#widgetContainer {
+  background-color: #CACACA;
+
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  -webkit-transition-property: height, width;
+  transition-property: height, width;
+-webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  display: flex;
+  flex-direction: row;
+}
+
+	#collapseButton {
+		height: 24px;
+		width: 24px;
+		background-color: #EB5757;
+		position: absolute;
+		z-index: 10;
+		right: 10px;
+		top: 10px;
+		border-radius: 2em;
+	}
+
+		#collapseButton p {
+			text-align: center;
+			margin: 2px 0 10px;
+    		color: white;
+		}
+
+	#onboardingInfo {
+	height: 300px;
+	width: 645px;
+	background-color: white;
+}
+
+	#pricing {}
+
+	#infoForm {
+		height: 300px;
+		width: 645px;
+		position: absolute;
+		bottom: 0px;
+	}
+
+	#nameform {
+
+	}
+
+	#questionForm {}
+
+	#paymentInfo {}
+
+
+	#widgetContainer:hover {
+		cursor: pointer;
+	}
+
+#onboardingControls {
+	position: absolute;
+	bottom: 20px;
+}
+
+#progressBar {
+	height: 4px;
+    width: 100px;
+    background-color: #27AE60;
+    position: absolute;
+    bottom: 0px;
+    z-index: 12;
+}
+
+#startButton {}
+
+.startCall {
+	height: 70px;
+	width: 340px;
+	background-color: #2D9CDB;
+	position: relative;
+	border-radius: .4em;
+	color: white;
+	text-transform: uppercase;
+	font-family: 'Roboto', 'sans-serif';
+
+}
