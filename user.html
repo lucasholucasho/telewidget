@@ -5,6 +5,14 @@
   </head>
   <body>
 	  <button>Start</button>
+	  <div class="wrapper">
+	      <div class="popup">
+	          <iframe src="" width="728" height="610">
+	              <p>Your browser does not support iframes.</p>
+	          </iframe>
+
+	      </div>
+	  </div>
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
@@ -25,10 +33,14 @@
 				  url = response['data']['meetingURL'];
 				  meeting_id = response['data']['meetingId'];
 				  socket.emit('meeting id', meeting_id);
-		          window.open(url, '_self');
+		          $("iframe").attr("src", url);
+		          $(".popup").fadeIn('slow');
 		      }
 		  });
       });
+	  $(document).ready(function () {
+		  $(".popup").hide();
+	  })
     </script>
   </body>
 </html>
